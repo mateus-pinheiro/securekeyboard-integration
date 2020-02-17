@@ -1,0 +1,70 @@
+library "pipeline-globile@master"
+
+def pipelineParams
+
+if (params.OVERRIDE_JOB_PARAMETERS) {
+    pipelineParams = params
+} else {
+    pipelineParams = [
+                         AGENT: 'android-docker-slave',
+                         PROJECT_NAME: 'SecureKeyboard',
+                         USE_AUTOMATIC_VERSION_GENERATION: false,
+                         // Obtain the version of the package and the docker
+                         VERSION_FILE: 'gradle.properties',
+                         OVERRIDE_JOB_PARAMETERS: false,
+                         SSH_CREDENTIALS: 'GitHubUser',
+                             // Steps
+                             // 1. Verify options
+                               //Automatically check the variables in Jenkins and show messages
+
+                             // 2. Compile
+                             SKIP_COMPILE: false,
+                                 CMD_COMPILE: './gradlew assembleMavenRelease --no-daemon',
+
+                             // 3. Unit Test
+                             SKIP_TEST: false,
+                                 CMD_TEST: './gradlew test --no-daemon',
+
+                             // 4. Sonar false:
+                             SKIP_SONAR: true, // Using Jenkins methods to be executed
+                                 //SONAR_NAME:'Add name here',
+
+                             // 5. Execute SAST Test
+                             PERFORM_SAST: false,
+                               //Don't change
+                               PERFORM_KIUWAN_PATH: '/opt/tools/kiuwan/KiuwanLocalAnalyzer/bin',
+                               //--
+                                 //-Paralell 1 Execute KIUWAN test
+                                 PERFORM_KIUWAN_ANALYSIS: false,
+
+                             // 6. RELEASE: Lunch a release pipeline with all the components
+                             SKIP_RELEASE: true,
+
+                               // Variables
+                               RELEASE_JOB: '../SecureKeyboard-Release', // Name of the job release
+                               LIBRARY_BRANCH: 'master',  // [OPTIONAL]
+
+                                 //6.1 Publish to maven: Publish in nexus
+                                 PUBLISH_TO_MAVEN: false,
+                                     // Variables
+                                     PUBLISH_REPO_CREDENTIALS: 'demo-nexus-user',
+                                     PUBLISH_REPO_RELEASE_URL: 'https://nexus.devops.blue4sky.com/repository/maven-releases/',
+                                     PUBLISH_REPO_SNAPSHOT_URL: 'https://nexus.devops.blue4sky.com/repository/maven-snapshots/',
+
+                             // 6. Notifications: Send Notifications
+                             SKIP_NOTIFICATIONS: false,
+                                 SKIP_NOTIFICATIONS_EMAIL: true,
+                                   // [Optional]CMD_NOTIFICATIONS_EMAIL: '',
+                                   // List emails with ,
+                                   VAR_NOTIFICATIONS_EMAIL_LIST: '',
+                                 SKIP_NOTIFICATIONS_SLACK: false,
+                                   // [Optional]CMD_NOTIFICATIONS_SLACK: '',
+                                   // Slack Channel ,
+                                   VAR_NOTIFICATIONS_SLACK_CHANNEL: '#mobisec_android_build_reports',
+
+                             // 7. CLEAN: Clean up Jenkins workspace
+                             SKIP_CLEAN: false, // Clean up Jenkins workspace
+                    ]
+}
+
+compileAndroidComponent pipelineParams

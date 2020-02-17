@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.globile.santander.mobisec.securekeyboard">
+
+    <application android:allowBackup="false">
+        <activity
+            android:name="com.globile.santander.mobisec.securekeyboard.SanDialog"
+            android:theme="@style/Theme.SanDialog.Translucent"/>
+    </application>
+
+</manifest>

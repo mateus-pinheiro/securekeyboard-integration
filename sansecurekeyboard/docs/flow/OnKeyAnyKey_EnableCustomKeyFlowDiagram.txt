@@ -1,0 +1,93 @@
+title OnKey: Any other key + Enable / Disable Custom Keys
+actor User
+
+participantgroup #lightgray SecureKeyboardModule
+
+participantgroup #orange views
+participant SanEditText
+participant SanKeyboardView
+end
+
+participantgroup #yellow keyboard
+participant SanKeyboardManager
+participant SanKeyboard
+participant SanCustomKeyData
+end
+
+end
+
+
+group #cornsilk OnKey: Any other key
+
+aboxright over User#purple:<color:#white>When Keyboard\n    is shown...</color>
+
+User->SanEditText:Click a key
+
+activate User
+activate SanEditText
+
+SanEditText->SanKeyboardView:onKeyUp()..
+
+activate SanKeyboardView
+
+abox over SanKeyboardView#purple:<color:#white>IF key = Any other key</color>
+
+SanKeyboardView--#purple>SanEditText:<color:#purple>Add char to cursor position</color>
+
+deactivate SanKeyboardView
+
+SanEditText--#purple>User:<color:#purple>Show text including text typed</color>
+
+deactivate SanEditText
+deactivate User
+
+end
+
+
+
+
+group #cornsilk Enable / Disable Custom Key 
+
+aboxright over User, SanEditText#purple:<color:#white>Developers call enableDisableCustomKey()</color>
+
+activate SanEditText
+
+activate User
+
+SanEditText->SanKeyboardView:initSanKeyboardInstance()
+
+activate SanKeyboardView
+
+SanKeyboardView->SanKeyboard:enableDisableCustomKey()
+
+activate SanKeyboard
+
+SanKeyboard->SanCustomKeyData:getSanCustomKeyDataForKeyCode()
+
+activate SanCustomKeyData
+
+SanCustomKeyData->SanKeyboard:return SanCustomKeyData
+
+deactivate SanCustomKeyData
+
+SanKeyboard->SanKeyboardView:Key enabled/disabled + Styles applied
+
+deactivate SanKeyboard
+
+
+
+
+SanKeyboardView->SanEditText:Show changes in Keyboard
+
+deactivate SanKeyboardView
+
+SanEditText->User:Show changes in Keyboard
+
+deactivate SanEditText
+
+deactivate User
+
+end
+
+
+

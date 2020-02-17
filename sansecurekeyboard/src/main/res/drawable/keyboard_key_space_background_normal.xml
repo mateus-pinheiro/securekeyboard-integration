@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <solid android:color="@color/keyboard_key_space_background" />
+
+    <stroke android:width="@dimen/keyboard_space_padding"
+        android:color="@color/keyboard_background_normal_new" />
+
+    <corners android:radius="8dp" />
+
+</shape>

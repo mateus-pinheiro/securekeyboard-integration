@@ -1,0 +1,70 @@
+// Variables
+// ----------------------------------------------------------
+
+ext {
+    publishRepoUsername = System.getenv('PUBLISH_REPO_USERNAME') ?: project.findProperty('publishRepoUsername')
+    publishRepoPassword = System.getenv('PUBLISH_REPO_PASSWORD') ?: project.findProperty('publishRepoPassword')
+
+    publishRepoSnapshotsUrl = System.getenv('PUBLISH_REPO_SNAPSHOT_URL') ?: project.findProperty('publishRepoSnapshotsUrl')
+    publishRepoReleasesUrl = System.getenv('PUBLISH_REPO_RELEASE_URL') ?: project.findProperty('publishRepoReleasesUrl')
+
+    publishRepoUrl = (version.endsWith("SNAPSHOT") ? publishRepoSnapshotsUrl : publishRepoReleasesUrl)
+
+    if (publishRepoUrl) println "publishRepoUrl $publishRepoUrl"
+    if (version) println "version $version"
+
+}
+
+// Nexus Authentication
+// ----------------------------------------------------------
+
+def nexusProperties = 'nexus_reader.properties'
+
+def nexusUsername
+def nexusPassword
+def nexusRepo
+
+def nexusPropsFile = rootProject.file(nexusProperties)
+if (nexusPropsFile.canRead()) {
+    Properties nexusProps = new Properties()
+    nexusProps.load(new FileInputStream(nexusPropsFile))
+
+    nexusUsername = nexusProps['nexusUsername']
+    nexusPassword = nexusProps['nexusPassword']
+    nexusRepo = nexusProps['nexusGroupRepo']
+}
+
+// ----------------------------------------------------------
+
+
+repositories {
+    google()
+    jcenter()
+//    maven {
+//        url nexusRepo
+//        credentials {
+//            username nexusUsername
+//            password nexusPassword
+//        }
+//
+//    }
+}
+
+publishing {
+    publications {
+        mavenAar(MavenPublication) {
+            from components.android
+            groupId = project.ext.groupId
+            artifactId = project.ext.artifactId
+        }
+    }
+    repositories {
+        maven {
+            url = publishRepoUrl
+            credentials {
+                username publishRepoUsername
+                password publishRepoPassword
+            }
+        }
+    }
+}

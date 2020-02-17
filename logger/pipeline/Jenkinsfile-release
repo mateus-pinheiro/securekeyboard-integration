@@ -1,0 +1,21 @@
+library "pipeline-globile@master"
+
+def pipelineParams
+
+if (params.OVERRIDE_JOB_PARAMETERS) {
+    pipelineParams = params
+} else {
+    pipelineParams = [
+                         AGENT: 'docker-slave',
+                         OVERRIDE_JOB_PARAMETERS: false,
+                         USE_AUTOMATIC_VERSION_GENERATION: true,
+                         VERSION_FILE: 'gradle.properties',
+                         SSH_CREDENTIALS: 'GitHubUser',
+                         PUBLISH_TO_MAVEN: true,
+                         PUBLISH_REPO_CREDENTIALS: 'demo-nexus-user',
+                         PUBLISH_REPO_RELEASE_URL: 'https://nexus.devops.blue4sky.com/repository/maven-releases/',
+                         PUBLISH_REPO_SNAPSHOT_URL: 'https://nexus.devops.blue4sky.com/repository/maven-snapshots/'
+                    ]
+}
+
+release pipelineParams

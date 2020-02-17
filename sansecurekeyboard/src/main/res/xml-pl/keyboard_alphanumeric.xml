@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Row
+        app:keyHeight="@dimen/keyboard_alpha_key_height"
+        app:keyWidth="9.46%p">
+
+        <Key
+            app:codes="113"
+            app:horizontalGap="2.77%p"
+            app:keyEdgeFlags="left"
+            app:keyLabel="q" />
+
+        <Key
+            app:codes="119"
+            app:keyLabel="w" />
+
+        <Key
+            app:codes="101,281"
+            app:keyLabel="e"
+            app:popupKeyboard="@xml/keyboard_alternate_keys_popup"
+            app:popupCharacters="@string/polish_alternates_for_e" />
+
+        <Key
+            app:codes="114"
+            app:keyLabel="r" />
+
+        <Key
+            app:codes="116"
+            app:keyLabel="t" />
+
+        <Key
+            app:codes="121"
+            app:keyLabel="y" />
+
+        <Key
+            app:codes="117"
+            app:keyLabel="u" />
+
+        <Key
+            app:codes="105"
+            app:keyLabel="i" />
+
+        <Key
+            app:codes="111,243"
+            app:keyLabel="o"
+            app:popupKeyboard="@xml/keyboard_alternate_keys_popup"
+            app:popupCharacters="@string/polish_alternates_for_o" />
+
+        <Key
+            app:codes="112"
+            app:keyEdgeFlags="right"
+            app:keyLabel="p" />
+
+    </Row>
+
+    <Row
+        app:keyHeight="@dimen/keyboard_alpha_key_height"
+        app:keyWidth="10%p">
+
+        <Key
+            app:codes="97,261"
+            app:horizontalGap="5%p"
+            app:keyEdgeFlags="left"
+            app:keyLabel="a"
+            app:popupKeyboard="@xml/keyboard_alternate_keys_popup"
+            app:popupCharacters="@string/polish_alternates_for_a" />
+
+        <Key
+            app:codes="115,347"
+            app:keyLabel="s"
+            app:popupKeyboard="@xml/keyboard_alternate_keys_popup"
+            app:popupCharacters="@string/polish_alternates_for_s" />
+
+        <Key
+            app:codes="100"
+            app:keyLabel="d" />
+
+        <Key
+            app:codes="102"
+            app:keyLabel="f" />
+
+        <Key
+            app:codes="103"
+            app:keyLabel="g" />
+
+        <Key
+            app:codes="104"
+            app:keyLabel="h" />
+
+        <Key
+            app:codes="106"
+            app:keyLabel="j" />
+
+        <Key
+            app:codes="107"
+            app:keyLabel="k" />
+
+        <Key
+            app:codes="108,322"
+            app:keyEdgeFlags="right"
+            app:keyLabel="l"
+            app:popupKeyboard="@xml/keyboard_alternate_keys_popup"
+            app:popupCharacters="@string/polish_alternates_for_l" />
+    </Row>
+
+    <Row
+        app:keyHeight="@dimen/keyboard_alpha_key_height"
+        app:keyWidth="9.45%p">
+
+        <Key
+            app:codes="@integer/keycode_shift"
+            app:keyEdgeFlags="left"
+            app:keyWidth="16.9%p"
+            app:isModifier="true"
+            app:isSticky="true"
+            app:keyIcon="@drawable/key_shift_default" />
+
+        <Key
+            app:codes="122,378,380"
+            app:keyLabel="z"
+            app:popupKeyboard="@xml/keyboard_alternate_keys_popup"
+            app:popupCharacters="@string/polish_alternates_for_z" />
+
+        <Key
+            app:codes="120"
+            app:keyLabel="x" />
+
+        <Key
+            app:codes="99,263"
+            app:keyLabel="c"
+            app:popupKeyboard="@xml/keyboard_alternate_keys_popup"
+            app:popupCharacters="@string/polish_alternates_for_c" />
+
+        <Key
+            app:codes="118"
+            app:keyLabel="v" />
+
+        <Key
+            app:codes="98"
+            app:keyLabel="b" />
+
+        <Key
+            app:codes="110,324"
+            app:keyLabel="n"
+            app:popupKeyboard="@xml/keyboard_alternate_keys_popup"
+            app:popupCharacters="@string/polish_alternates_for_n" />
+
+        <Key
+            app:codes="109"
+            app:keyLabel="m" />
+
+        <Key
+            app:codes="@integer/keycode_delete"
+            app:isRepeatable="true"
+            app:keyEdgeFlags="right"
+            app:keyIcon="@drawable/key_backspace_default"
+            app:keyWidth="16.9%p" />
+    </Row>
+
+    <Row app:keyHeight="@dimen/keyboard_alpha_key_height_bottom_row">
+
+        <Key
+            app:codes="@integer/keycode_secure_keyboard"
+            app:horizontalGap="1%p"
+            app:keyEdgeFlags="left"
+            app:keyIcon="@drawable/key_secure_keyboard"
+            app:keyWidth="24%p" />
+
+        <Key
+            app:codes="@integer/keycode_mode_change"
+            app:isModifier="true"
+            app:isSticky="true"
+            app:keyIcon="@drawable/ic_keyboard_specialcharacter"
+            app:keyWidth="8%p" />
+
+        <Key
+            app:codes="@integer/keycode_space"
+            app:keyWidth="30%p" />
+
+        <Key
+            app:codes="44,46"
+            app:keyLabel=","
+            app:keyWidth="8%p"
+            app:popupCharacters="."
+            app:popupKeyboard="@xml/keyboard_alternate_keys_popup" />
+
+        <Key
+            app:codes="@integer/keycode_done"
+            app:horizontalGap="1%p"
+            app:isSticky="true"
+            app:keyEdgeFlags="right"
+            app:keyWidth="24%p" />
+    </Row>
+
+</Keyboard>

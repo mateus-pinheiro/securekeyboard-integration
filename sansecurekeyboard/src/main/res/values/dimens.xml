@@ -1,0 +1,25 @@
+<resources>
+
+    <dimen name="keyboard_numeric_key_height">62dp</dimen>
+    <dimen name="keyboard_numeric_key_height_top_row">48dp</dimen>
+
+    <dimen name="keyboard_decimal_key_height">50dp</dimen>
+    <dimen name="keyboard_decimal_key_height_top_row">48dp</dimen>
+
+    <dimen name="keyboard_alpha_key_height">50dp</dimen>
+    <dimen name="keyboard_alpha_key_height_top_row">48dp</dimen>
+    <dimen name="keyboard_alpha_key_height_bottom_row">48dp</dimen>
+
+    <dimen name="keyboard_key_text_size">20sp</dimen>
+
+    <dimen name="keyboard_padding_vertical">8dp</dimen>
+
+    <dimen name="keyboard_space_padding">3dp</dimen>
+    <dimen name="keyboard_space_arrow_width">15dp</dimen>
+    <dimen name="keyboard_space_arrow_height">20dp</dimen>
+    <dimen name="keyboard_space_layout_name_margin_horizontal">2dp</dimen>
+    <dimen name="keyboard_space_layout_name_text_size">15sp</dimen>
+
+    <dimen name="keyboard_dialog_screen_padding_minimum">16dp</dimen>
+
+</resources>

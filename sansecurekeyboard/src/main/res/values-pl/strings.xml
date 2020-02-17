@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="securekeyboard_done">Gotowe</string>
+    <string name="securekeyboard_OK">Dobrze</string>
+    <string name="securekeyboard_continue">Dalej</string>
+    <string name="securekeyboard_cancel">Anuluj</string>
+
+    <string name="securekeyboard_title_select_keyboard_language">Wybierz język klawiatury</string>
+
+</resources>

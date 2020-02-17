@@ -1,0 +1,21 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="Theme.SanDialog.Translucent" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowBackground">@color/keyboard_window_background</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="keyboard_alpha_numeric_grey_style">
+        <item name="android:background">@color/keyboard_background_normal_new</item>
+        <item name="keyBackground">@drawable/keyboard_key_background_grey_selector</item>
+        <item name="keyTextColor">@color/keyboard_key_text</item>
+        <item name="keyTextSize">@dimen/keyboard_key_text_size</item>
+        <item name="android:paddingTop">@dimen/keyboard_padding_vertical</item>
+        <item name="android:paddingBottom">@dimen/keyboard_padding_vertical</item>
+        <item name="popupKeyboard">@xml/keyboard_alternate_keys_popup</item>
+        <item name="popupLayout">@layout/popup_layout</item>
+    </style>
+
+</resources>

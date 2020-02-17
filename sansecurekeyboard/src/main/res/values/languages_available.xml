@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="dialog_languages_array">
+        <item>English, GB</item>
+        <item>Español, ES</item>
+        <item>Portuguès, PT</item>
+        <item>Polski, PL</item>
+    </string-array>
+</resources>

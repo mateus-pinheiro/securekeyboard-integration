@@ -1,0 +1,11 @@
+// Configuration variables
+// ----------------------------------------------------------
+
+ext {
+    groupId = 'com.globile.santander.mobisec'
+    artifactId = 'securekeyboard'
+
+    // Dependencies variables
+    loggerVersion = '1.0.0'
+
+}

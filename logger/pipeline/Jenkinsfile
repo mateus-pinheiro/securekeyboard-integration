@@ -1,0 +1,46 @@
+library "pipeline-globile@master"
+
+def pipelineParams
+
+if (params.OVERRIDE_JOB_PARAMETERS) {
+    pipelineParams = params
+} else {
+    pipelineParams = [
+                         AGENT: 'android-docker-slave',
+                         PROJECT_NAME: 'Logger',
+                         USE_AUTOMATIC_VERSION_GENERATION: false,
+                         VERSION_FILE: 'gradle.properties',
+                         OVERRIDE_JOB_PARAMETERS: false,
+                         SSH_CREDENTIALS: 'GitHubUser',
+                         SKIP_COMPILE: false,
+                         CMD_COMPILE: './gradlew assembleMavenRelease --no-daemon',
+
+                         SKIP_TEST: false,
+                         CMD_TEST: './gradlew test --no-daemon',
+
+                         SKIP_SONAR: true, // Using Jenkins methods to be executed
+                         PERFORM_SAST: false,
+                         PERFORM_KIUWAN_PATH: '/opt/tools/kiuwan/KiuwanLocalAnalyzer/bin',
+                         PERFORM_KIUWAN_ANALYSIS: false,
+
+                         SKIP_RELEASE: true,
+
+                         RELEASE_JOB: '../Logger-Release', // Name of the job release
+                         LIBRARY_BRANCH: 'master',  // [OPTIONAL]
+
+                         PUBLISH_TO_MAVEN: false,
+                         PUBLISH_REPO_CREDENTIALS: 'demo-nexus-user',
+                         PUBLISH_REPO_RELEASE_URL: 'https://nexus.devops.blue4sky.com/repository/maven-releases/',
+                         PUBLISH_REPO_SNAPSHOT_URL: 'https://nexus.devops.blue4sky.com/repository/maven-snapshots/',
+
+                         SKIP_NOTIFICATIONS: false,
+                         SKIP_NOTIFICATIONS_EMAIL: true,
+                         VAR_NOTIFICATIONS_EMAIL_LIST: '',
+                         SKIP_NOTIFICATIONS_SLACK: false,
+                         VAR_NOTIFICATIONS_SLACK_CHANNEL: '#mobisec_android_build_reports',
+
+                         SKIP_CLEAN: false, // Clean up Jenkins workspace
+                    ]
+}
+
+compileAndroidComponent pipelineParams

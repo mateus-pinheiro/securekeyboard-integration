@@ -1,0 +1,73 @@
+title OnKey: Continue / Cancel + Delete
+actor User
+
+participantgroup #lightgray SecureKeyboardModule
+
+participantgroup #orange views
+participant SanEditText
+participant SanKeyboardView
+end
+
+participantgroup #yellow keyboard
+participant SanKeyboardManager
+participant SanKeyboard
+participant SanCustomKeyData
+end
+
+end
+
+group #cornsilk OnKey: Key Continue / Key Cancel
+
+aboxright over User#purple:<color:#white>When Keyboard\n    is shown...</color>
+
+User->SanEditText:Click a key
+
+activate User
+activate SanEditText
+
+SanEditText->SanKeyboardView:onKeyUp()
+
+activate SanKeyboardView
+
+aboxright over SanKeyboardView#purple:<color:#white>IF key = CANCEL or CONTINUE</color>
+
+
+SanKeyboardView--#purple>SanEditText:<color:#purple>hideKeyboard()</color>
+
+deactivate SanKeyboardView
+
+SanEditText--#purple>User:<color:#purple>Hide Keyboard</color>
+
+deactivate SanEditText
+deactivate User
+end
+
+
+group #cornsilk OnKey: Key Delete
+
+aboxright over User#purple:<color:#white>When Keyboard\n    is shown...</color>
+
+User->SanEditText:Click a key
+
+activate User
+activate SanEditText
+
+SanEditText->SanKeyboardView:onKeyUp()
+
+activate SanKeyboardView
+
+aboxright over SanKeyboardView#purple:<color:#white>           IF key = DELETE             </color>
+
+
+
+
+
+SanKeyboardView--#purple>SanEditText:<color:#purple>Delete last char</color>
+
+deactivate SanKeyboardView
+
+SanEditText--#purple>User:<color:#purple>Show text without last chart</color>
+
+deactivate SanEditText
+deactivate User
+end

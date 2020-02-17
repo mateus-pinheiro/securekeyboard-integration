@@ -1,0 +1,104 @@
+title SanDialog (Secure Keyboard in Dialogs)
+actor User
+
+participantgroup #lightgray SecureKeyboardModule
+
+participantgroup #orange views
+participant SanDialog
+participant SanEditText
+participant SanKeyboardView
+end
+
+participantgroup #yellow keyboard
+participant SanKeyboardManager
+participant SanKeyboard
+participant SanCustomKeyData
+end
+
+end
+
+group #cornsilk Show Keyboard
+
+User->SanDialog:Show dialog
+
+activate User
+activate SanDialog
+
+SanDialog->SanEditText:Click on EditText (getFocus)
+
+activate SanEditText
+
+SanEditText->SanKeyboardView:initSanKeyboardInstance()
+
+activate SanKeyboardView
+
+SanKeyboardView->SanKeyboardManager:new SanKeyboardManager()
+
+activate SanKeyboardManager
+
+SanKeyboardManager->SanKeyboard:inflateKeyboards()
+
+activate SanKeyboard
+
+SanKeyboard->SanCustomKeyData:getSanCustomKeyDataForKeyCode()
+
+activate SanCustomKeyData
+
+SanCustomKeyData->SanKeyboard:return SanCustomKeyData
+
+deactivate SanCustomKeyData
+
+SanKeyboard->SanKeyboardManager:return SanKeyboard
+
+deactivate SanKeyboard
+
+SanKeyboardManager->SanKeyboardView:return SanKeyboardManager
+
+deactivate SanKeyboardManager
+
+SanKeyboardView->SanEditText:slideIn()
+
+deactivate SanKeyboardView
+
+SanEditText->SanDialog:Show Keyboard View
+
+deactivate SanEditText
+
+SanDialog->User:Show Keyboard View for Dialog
+
+deactivate SanDialog
+deactivate User
+
+end
+
+
+
+group #cornsilk Hide Keyboard
+
+User->SanDialog:Press BACK when Keyboard is Showing\n                  (lose focus)
+
+activate User
+activate SanDialog
+
+SanDialog->SanEditText: Hide Keyboard for Dialog
+
+activate SanEditText
+
+SanEditText->SanKeyboardView:hideKeyboard()
+
+activate SanKeyboardView
+
+SanKeyboardView->SanEditText:slideOut()
+
+deactivate SanKeyboardView
+
+SanEditText->SanDialog: Hide Keyboard View
+
+deactivate SanEditText
+
+SanDialog->User:Hide Keyboard View
+
+deactivate SanDialog
+deactivate User
+
+end

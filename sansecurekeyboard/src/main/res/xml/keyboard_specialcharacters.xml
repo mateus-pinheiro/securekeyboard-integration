@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--248-->
+
+    <Row
+        app:keyWidth="9.46%p"
+        app:keyHeight="@dimen/keyboard_alpha_key_height">
+
+        <Key
+            app:codes="49"
+            app:horizontalGap="2.77%p"
+            app:keyEdgeFlags="left"
+            app:keyLabel="1" />
+
+        <Key
+            app:codes="50"
+            app:keyLabel="2" />
+
+        <Key
+            app:codes="51"
+            app:keyLabel="3" />
+
+        <Key
+            app:codes="52"
+            app:keyLabel="4" />
+
+        <Key
+            app:codes="53"
+            app:keyLabel="5" />
+
+        <Key
+            app:codes="54"
+            app:keyLabel="6" />
+
+        <Key
+            app:codes="55"
+            app:keyLabel="7" />
+
+        <Key
+            app:codes="56"
+            app:keyLabel="8" />
+
+        <Key
+            app:codes="57"
+            app:keyLabel="9" />
+
+        <Key
+            app:codes="48"
+            app:keyEdgeFlags="right"
+            app:keyLabel="0" />
+    </Row>
+
+    <Row app:keyHeight="@dimen/keyboard_alpha_key_height">
+
+        <Key
+            app:codes="64"
+            app:keyEdgeFlags="left"
+            app:keyLabel="\@" />
+
+        <Key
+            app:codes="35"
+            app:keyLabel="\#" />
+
+        <Key
+            app:codes="36"
+            app:keyLabel="$" />
+
+        <Key
+            app:codes="95"
+            app:keyLabel="_" />
+
+        <Key
+            app:codes="38"
+            app:keyLabel="&amp;" />
+
+        <Key
+            app:codes="45"
+            app:keyLabel="-" />
+
+        <Key
+            app:codes="43"
+            app:keyLabel="+" />
+
+        <Key
+            app:codes="40"
+            app:keyLabel="(" />
+
+        <Key
+            app:codes="41"
+            app:keyLabel=")" />
+
+        <Key
+            app:codes="47"
+            app:keyEdgeFlags="right"
+            app:keyLabel="/" />
+
+    </Row>
+
+    <Row
+        app:keyWidth="9.46%p"
+        app:keyHeight="@dimen/keyboard_alpha_key_height">
+
+        <Key
+            app:codes="@integer/keycode_special_change"
+            app:isModifier="true"
+            app:isSticky="true"
+            app:keyEdgeFlags="left"
+            app:keyIcon="@drawable/ic_keyboard_specialcharacter_1"
+            app:keyWidth="16.9%p" />
+
+        <Key
+            app:codes="42"
+            app:keyLabel="*" />
+
+        <Key
+            app:codes="34"
+            app:keyLabel="&quot;" />
+
+        <Key
+            app:codes="39"
+            app:keyLabel="&apos;" />
+
+        <Key
+            app:codes="58"
+            app:keyLabel=":" />
+
+        <Key
+            app:codes="59"
+            app:keyLabel=";" />
+
+        <Key
+            app:codes="33"
+            app:keyLabel="!" />
+
+        <Key
+            app:codes="63"
+            app:keyLabel="\?" />
+
+        <Key
+            app:codes="@integer/keycode_delete"
+            app:isRepeatable="true"
+            app:keyWidth="16.9%p"
+            app:keyEdgeFlags="right"
+            app:keyIcon="@drawable/key_backspace_default" />
+    </Row>
+
+    <Row app:keyHeight="@dimen/keyboard_alpha_key_height_bottom_row">
+
+        <Key
+            app:codes="@integer/keycode_secure_keyboard"
+            app:horizontalGap="1%p"
+            app:keyWidth="24%p"
+            app:keyEdgeFlags="left"
+            app:keyIcon="@drawable/key_secure_keyboard" />
+
+        <Key
+            app:codes="@integer/keycode_mode_change"
+            app:isModifier="true"
+            app:isSticky="true"
+            app:keyWidth="8%p"
+            app:keyIcon="@drawable/ic_keyboard_alphanumeric" />
+
+        <Key
+            app:codes="@integer/keycode_space"
+            app:keyWidth="30%p" />
+
+        <Key
+            app:codes="46"
+            app:keyWidth="8%p"
+            app:keyLabel="." />
+
+        <Key
+            app:codes="@integer/keycode_done"
+            app:horizontalGap="1%p"
+            app:isSticky="true"
+            app:keyWidth="24%p"
+            app:keyEdgeFlags="right" />
+    </Row>
+
+</Keyboard>

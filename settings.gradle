@@ -1,0 +1,2 @@
+include ':app', ':sansecurekeyboard', ':logger'
+rootProject.name='SecureKeyboardPOC'

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="securekeyboard_done">Hecho</string>
+    <string name="securekeyboard_OK">OK</string>
+    <string name="securekeyboard_continue">Continuar</string>
+    <string name="securekeyboard_cancel">Cancelar</string>
+
+    <string name="securekeyboard_title_select_keyboard_language">Selecciona idioma del teclado</string>
+
+</resources>

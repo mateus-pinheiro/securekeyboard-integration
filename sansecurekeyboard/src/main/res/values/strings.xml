@@ -1,0 +1,54 @@
+<resources>
+
+    <string name="securekeyboard_done">Done</string>
+    <string name="securekeyboard_OK">OK</string>
+    <string name="securekeyboard_continue">Continue</string>
+    <string name="securekeyboard_cancel">Cancel</string>
+
+    <string name="securekeyboard_title_select_keyboard_language">Select keyboard language</string>
+
+    <string translatable="false" name="spanish_alternates_for_a">á</string>
+    <string translatable="false" name="spanish_alternates_for_e">é</string>
+    <string translatable="false" name="spanish_alternates_for_i">í</string>
+    <string translatable="false" name="spanish_alternates_for_o">ó</string>
+    <string translatable="false" name="spanish_alternates_for_u">úü</string>
+    <string translatable="false" name="spanish_alternates_for_c">ç</string>
+
+    <string translatable="false" name="portuguese_alternates_for_a">áâãà</string>
+    <string translatable="false" name="portuguese_alternates_for_e">éê</string>
+    <string translatable="false" name="portuguese_alternates_for_i">í</string>
+    <string translatable="false" name="portuguese_alternates_for_o">óôõ</string>
+    <string translatable="false" name="portuguese_alternates_for_u">ú</string>
+
+    <string translatable="false" name="polish_alternates_for_a">ą</string>
+    <string translatable="false" name="polish_alternates_for_e">ę</string>
+    <string translatable="false" name="polish_alternates_for_o">ó</string>
+    <string translatable="false" name="polish_alternates_for_c">ć</string>
+    <string translatable="false" name="polish_alternates_for_l">ł</string>
+    <string translatable="false" name="polish_alternates_for_n">ń</string>
+    <string translatable="false" name="polish_alternates_for_s">ś</string>
+    <string translatable="false" name="polish_alternates_for_z">źż</string>
+
+
+    <!-- Copied from Android AOSP (API 29) -->
+    <!-- ************************************************* -->
+
+
+    <!-- KeyboardView - accessibility support -->
+    <!-- Description of the Alt button in a KeyboardView. [CHAR LIMIT=NONE] -->
+    <string translatable="false" name="keyboardview_keycode_alt">Alt</string>
+    <!-- Description of the Cancel button in a KeyboardView. [CHAR LIMIT=NONE] -->
+    <string translatable="false" name="keyboardview_keycode_cancel">Cancel</string>
+    <!-- Description of the Delete button in a KeyboardView. [CHAR LIMIT=NONE] -->
+    <string translatable="false" name="keyboardview_keycode_delete">Delete</string>
+    <!-- Description of the Done button in a KeyboardView. [CHAR LIMIT=NONE] -->
+    <string translatable="false" name="keyboardview_keycode_done">Done</string>
+    <!-- Description of the Mode change button in a KeyboardView. [CHAR LIMIT=NONE] -->
+    <string translatable="false" name="keyboardview_keycode_mode_change">Mode change</string>
+    <!-- Description of the Shift button in a KeyboardView. [CHAR LIMIT=NONE] -->
+    <string translatable="false" name="keyboardview_keycode_shift">Shift</string>
+    <!-- Description of the Enter button in a KeyboardView. [CHAR LIMIT=NONE] -->
+    <string translatable="false" name="keyboardview_keycode_enter">Enter</string>
+
+
+</resources>

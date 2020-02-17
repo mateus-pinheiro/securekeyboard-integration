@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.globile.santander.mobisec.securekeyboard.SanKeyboardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/san_keyboard_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:visibility="gone"
+    style="@style/keyboard_alpha_numeric_grey_style"/>
